@@ -17,7 +17,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 relative z-10">
           <div className="flex items-center gap-2 font-semibold tracking-[0.18em] text-xs uppercase text-skybrand-deep">
             <span className="logo-chip interactive w-11 h-11 rounded-full border border-white shadow-[0_0_18px_rgba(111,198,255,0.9)]">
-              <img src="src/assets/gallery/lo1.jpg" alt="AS NETS logo" />
+              <img src="/asnets-logo.svg" alt="AS NETS logo" />
             </span>
             <span>AS NETS</span>
           </div>
