@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="AS NETS logo">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66C8FF"/>
+      <stop offset="60%" stop-color="#0D67A5"/>
+      <stop offset="100%" stop-color="#0FF7E0"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D2438" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0E3B2C" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="36" fill="#04121E"/>
+  <rect x="8" y="8" width="164" height="164" rx="28" fill="#051927"/>
+  <g transform="translate(20 24)">
+    <path d="M20 68c8-12 20-22 38-26 20-5 30-2 44 3 8 3 16 7 26 6 2 0 4-1 5-2-1 8-4 15-10 20-10 9-24 12-38 8-10-3-18-9-28-9-12 0-24 7-31 16l-10 13c-1 1-3 1-4 0-1-1-1-3 0-4l8-11Z" fill="url(#g1)"/>
+    <path d="M4 82c0-12 6-23 16-30 13-10 31-10 46-3 11 5 18 12 29 16 12 5 28 6 41 0-2 9-7 17-14 22-17 14-40 15-59 6-14-7-24-14-39-13-6 1-13 3-18 7-1 1-2 1-3 1-2 0-4-2-4-4Z" fill="url(#g2)"/>
+    <g transform="translate(12 76)" stroke="#66C8FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 10h116"/>
+      <path d="M8 0 22 20M28 0 42 20M48 0 62 20M68 0 82 20M88 0 102 20"/>
+      <path d="M8 20 22 0M28 20 42 0M48 20 62 0M68 20 82 0M88 20 102 0"/>
+    </g>
+  </g>
+</svg>
