@@ -10,18 +10,24 @@ const CATEGORY_CARDS = [
     title: 'Balcony Safety Nets',
     description: 'Child-safe, pet-safe balcony protection with pro installation.',
     cta: 'View Balcony Packages',
+    image: '/gallery-balcony.webp',
+    rating: { score: 4.9, label: '1,200+ installs' },
   },
   {
     key: 'cricket',
     title: 'Cricket Practice & Sports Nets',
     description: 'Cage nets, ball stoppers and terrace practice setups.',
     cta: 'View Cricket Packages',
+    image: '/gallery-cricket.webp',
+    rating: { score: 4.8, label: '800+ installs' },
   },
   {
     key: 'storage',
     title: 'Storage / Cargo / Utility Nets',
     description: 'Heavy-duty storage nets. Fill data later.',
     cta: 'View Storage Packages',
+    image: '/gallery-balcony.webp',
+    rating: { score: 4.7, label: 'Coming soon' },
   },
 ]
 
@@ -185,6 +191,23 @@ function CategoryGrid({ selectedCategory, onSelect }) {
             selectedCategory === card.key ? 'border-skybrand-deep shadow-[0_16px_36px_rgba(13,36,56,0.2)]' : 'border-skybrand-light/70'
           } bg-white/95 shadow-[0_12px_26px_rgba(13,36,56,0.12)] p-5 flex flex-col gap-3 hover:-translate-y-[2px] transition`}
         >
+          <div className="relative h-32 rounded-xl overflow-hidden border border-skybrand-light/60 shadow-sm">
+            {card.image ? (
+              <img src={card.image} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-skybrand/80 via-white to-skybrand/40" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/15 to-transparent" />
+            <div className="absolute top-2 left-2 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/85 text-[11px] font-semibold text-anchor-navy shadow-sm">
+              <span>★ {card.rating?.score ?? '4.8'}</span>
+              <span className="text-anchor-navy/70">{card.rating?.label ?? 'Top rated'}</span>
+            </div>
+            {idx === 0 && (
+              <span className="absolute top-2 right-2 text-[11px] px-2 py-1 rounded-full bg-white border border-accent-coral/70 text-accent-coral font-semibold">
+                Best Seller
+              </span>
+            )}
+          </div>
           <div className="flex items-center justify-between">
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-skybrand to-skybrand-deep text-white flex items-center justify-center text-sm font-semibold shadow-md">
               {String(idx + 1).padStart(2, '0')}
