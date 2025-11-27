@@ -64,7 +64,7 @@ const RATE_25MM_CRICKET = 30
 
 const currency = (value) => `₹${value.toLocaleString('en-IN')}`
 const ENQUIRY_BTN_CLASSES =
-  'w-full inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:from-emerald-500 hover:to-green-600 active:from-green-700 active:to-emerald-700 shadow-md hover:shadow-lg transition-all duration-300'
+  'w-full relative inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-skybrand to-skybrand-deep hover:from-emerald-500 hover:to-green-600 shadow-[0_14px_30px_rgba(14,165,233,0.35)] hover:shadow-[0_16px_40px_rgba(16,185,129,0.35)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-1 focus:ring-offset-white'
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -193,7 +193,14 @@ function CategoryGrid({ selectedCategory, onSelect }) {
         >
           <div className="relative h-32 rounded-xl overflow-hidden border border-skybrand-light/60 shadow-sm">
             {card.image ? (
-              <img src={card.image} alt={card.title} className="w-full h-full object-cover" loading="lazy" />
+              <motion.img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                animate={{ scale: [1, 1.04, 1], y: [0, -6, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+              />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-skybrand/80 via-white to-skybrand/40" />
             )}
@@ -220,14 +227,17 @@ function CategoryGrid({ selectedCategory, onSelect }) {
           <p className="text-sm text-anchor-navy/75 flex-1">{card.description}</p>
           <button
             type="button"
+            aria-pressed={selectedCategory === card.key}
             onClick={() => onSelect(card.key)}
-            className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold ${
+            className={`group relative inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold overflow-hidden transition-all duration-300 ${
               selectedCategory === card.key
-                ? 'bg-skybrand-deep text-white shadow-md'
-                : 'border border-skybrand-light text-anchor-navy hover:bg-skybrand/20'
-            } transition`}
+                ? 'bg-gradient-to-r from-skybrand to-skybrand-deep text-white shadow-[0_14px_32px_rgba(59,130,246,0.35)] ring-2 ring-skybrand/60'
+                : 'border border-skybrand-light bg-white text-anchor-navy hover:-translate-y-[1px] hover:shadow-[0_12px_24px_rgba(13,36,56,0.16)] hover:border-skybrand'
+            }`}
           >
+            <span className="mr-1 text-base leading-none">•</span>
             {selectedCategory === card.key ? 'Selected' : card.cta}
+            <span className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-105">→</span>
           </button>
         </motion.article>
       ))}
@@ -249,8 +259,8 @@ function CategoryDetails({
 }) {
   if (!selectedCategory) {
     return (
-      <div className="text-center py-12 text-sm text-anchor-navy/70">
-        Pick a category to view packages and custom sizing.
+      <div className="text-center py-8 text-sm font-medium text-anchor-navy/70">
+        Pick a category to view packages & custom sizing.
       </div>
     )
   }
@@ -355,7 +365,6 @@ function BalconyPackages({ onSelectPackage, custom, customArea, customPrice, onC
           customPrice={customPrice}
           onCustomChange={onCustomChange}
           onSelectPackage={onSelectPackage}
-          onWhatsappQuickEnquiry={onWhatsappQuickEnquiry}
         />
       </div>
     </div>
@@ -467,7 +476,7 @@ function PackageOption({ label, price, rate, buttonText, onSelect }) {
   )
 }
 
-function CustomBalconyCard({ custom, customArea, customPrice, onCustomChange, onSelectPackage, onWhatsappQuickEnquiry }) {
+function CustomBalconyCard({ custom, customArea, customPrice, onCustomChange, onSelectPackage }) {
   const rate = custom.thickness === '2.5mm' ? RATE_25MM_BALCONY : RATE_2MM_BALCONY
   const canSelect = customArea > 0
 
@@ -566,18 +575,9 @@ Please call back to confirm installation slot.
         </span>
       </div>
       <button type="button" className={ENQUIRY_BTN_CLASSES} onClick={handleSelectCustom}>
-        Select Custom Balcony Package <span className="text-xs">→</span>
+        Select Custom Balcony on Whatsapp<span className="text-xs">→</span>
       </button>
-      <button
-        type="button"
-        className={`w-full inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 active:from-green-700 active:to-emerald-700 shadow-md hover:shadow-lg transition-all duration-300 ${
-          canSelect ? '' : 'opacity-60 cursor-not-allowed'
-        }`}
-        onClick={handleWhatsappCustom}
-        disabled={!canSelect}
-      >
-        Send Custom Balcony on WhatsApp <span className="text-xs">→</span>
-      </button>
+      
     </article>
   )
 }
@@ -669,7 +669,6 @@ Please call back to confirm installation slot.
           type="button"
           className="w-full mt-1 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-blue-600 text-white shadow-md hover:bg-green-600 active:bg-green-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
           onClick={handleWhatsappCustomCricket}
-          disabled={!canSelectCustom}
         >
           WhatsApp Enquiry
         </button>
