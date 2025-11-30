@@ -867,6 +867,8 @@ Please call back to confirm installation slot.
               onChange={(e) => onCustomChange('width', e.target.value)}
               className="w-full rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
               placeholder="e.g. 12"
+              min="0"
+              step="0.1"
             />
           </label>
           <label className="text-xs text-anchor-navy/80 dark:text-dark-text space-y-1">
@@ -877,6 +879,8 @@ Please call back to confirm installation slot.
               onChange={(e) => onCustomChange('height', e.target.value)}
               className="w-full rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
               placeholder="e.g. 10"
+              min="0"
+              step="0.1"
             />
           </label>
           <label className="col-span-2 text-xs text-anchor-navy/80 dark:text-dark-text space-y-1">
@@ -908,7 +912,16 @@ Please call back to confirm installation slot.
           >
             Select Custom Balcony<span className="text-xs">→</span>
           </button>
-          
+          <button
+            type="button"
+            className="w-full inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 shadow-md hover:shadow-lg transition gap-2"
+            onClick={handleWhatsappCustom}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-4 h-4 fill-current">
+              <path d="M16 2.667c-7.364 0-13.333 5.97-13.333 13.333 0 2.35.614 4.64 1.78 6.667L2.667 29.333l6.802-1.745A13.28 13.28 0 0 0 16 29.333c7.364 0 13.333-5.97 13.333-13.333S23.364 2.667 16 2.667Zm0 24A10.63 10.63 0 0 1 10.03 25.3l-.214-.128-4.056 1.041 1.076-3.957-.137-.235a10.626 10.626 0 0 1-1.532-5.02c0-5.876 4.793-10.667 10.667-10.667 5.876 0 10.667 4.79 10.667 10.667 0 5.874-4.79 10.667-10.667 10.667Zm5.86-7.94c-.32-.16-1.89-.93-2.185-1.035-.293-.108-.508-.16-.723.158-.213.32-.828 1.032-1.014 1.247-.186.213-.374.24-.694.08-.32-.16-1.353-.498-2.578-1.586-.95-.848-1.59-1.894-1.778-2.214-.186-.32-.02-.49.14-.65.14-.14.32-.374.48-.56.16-.186.213-.32.32-.534.107-.213.054-.4-.027-.56-.08-.16-.723-1.744-.992-2.392-.26-.626-.526-.54-.723-.55-.186-.013-.4-.013-.614-.013-.213 0-.56.08-.853.4-.293.32-1.12 1.094-1.12 2.667 0 1.574 1.147 3.094 1.306 3.307.16.213 2.254 3.44 5.46 4.72.764.33 1.36.525 1.82.672.765.243 1.46.208 2.013.126.614-.094 1.89-.772 2.16-1.52.267-.747.267-1.386.187-1.52-.08-.133-.293-.213-.613-.373Z" />
+            </svg>
+            WhatsApp Enquiry
+          </button>
         </div>
       </div>
     </article>
@@ -990,6 +1003,8 @@ Please call back to confirm installation slot.
               onChange={(e) => onCustomChange('width', e.target.value)}
               className="w-full rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
               placeholder="e.g. 12"
+              min="0"
+              step="0.1"
             />
           </label>
           <label className="text-xs text-anchor-navy/80 dark:text-dark-text space-y-1">
@@ -1000,6 +1015,8 @@ Please call back to confirm installation slot.
               onChange={(e) => onCustomChange('height', e.target.value)}
               className="w-full rounded-lg border border-slate-200 bg-white/90 px-3 py-2 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
               placeholder="e.g. 10"
+              min="0"
+              step="0.1"
             />
           </label>
           <label className="col-span-2 text-xs text-anchor-navy/80 dark:text-dark-text space-y-1">
@@ -1247,6 +1264,8 @@ Please call back to confirm installation slot.
               Phone / WhatsApp
               <input
                 type="tel"
+                inputMode="tel"
+                pattern="[0-9]{10,}"
                 className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
                 value={enquiry.phone}
                 onChange={(e) => onEnquiryChange('phone', e.target.value)}
