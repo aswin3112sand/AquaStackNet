@@ -3,13 +3,15 @@ import React from 'react'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="border-t border-skybrand-light/90 bg-white/95">
+    <footer className="border-t border-skybrand-light/90 dark:border-dark-muted bg-white/95 dark:bg-dark-card/80">
       <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-anchor-navy">
-          <span className="w-5 h-5 rounded-full bg-gradient-to-br from-skybrand-deep to-skybrand shadow-[0_0_12px_rgba(102,200,255,0.65)]" />
+        <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-anchor-navy dark:text-dark-text">
+          <span className="logo-chip w-9 h-9 rounded-full border border-white shadow-[0_0_14px_rgba(102,200,255,0.65)] dark:border-skybrand-deep">
+            <img src="/lo1.jpg" alt="AS NETS logo" />
+          </span>
           <span>AS NETS</span>
         </div>
-        <div className="flex gap-3 text-[11px] text-slate-600">
+        <div className="flex gap-3 text-[11px] text-slate-600 dark:text-dark-muted">
           <a href="#home" className="nav-link">
             Home
           </a>
@@ -30,14 +32,14 @@ export default function Footer() {
           <a
             href="#"
             aria-label="Instagram"
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 text-slate-500 bg-white hover:border-skybrand hover:text-skybrand-deep shadow-sm transition"
+            className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-dark-muted text-slate-500 dark:text-dark-text bg-white dark:bg-dark-card hover:border-skybrand hover:text-skybrand-deep shadow-sm transition"
           >
             <span className="text-base">📷</span>
           </a>
           <a
             href="#"
             aria-label="Facebook"
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 text-slate-500 bg-white hover:border-skybrand hover:text-skybrand-deep shadow-sm transition"
+            className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-dark-muted text-slate-500 dark:text-dark-text bg-white dark:bg-dark-card hover:border-skybrand hover:text-skybrand-deep shadow-sm transition"
           >
             <span className="text-base">📘</span>
           </a>
@@ -57,7 +59,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="text-center text-[11px] text-slate-500 pb-3">
+      <div className="text-center text-[11px] text-slate-500 dark:text-dark-muted pb-3">
         © {year} AS NETS – Balcony Safety Nets. All rights reserved.
       </div>
     </footer>

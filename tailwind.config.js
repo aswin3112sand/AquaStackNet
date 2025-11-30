@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -25,6 +26,12 @@ export default {
           beige: "#F7F1E8",
           taupe: "#E8DFD3",
         },
+        dark: {
+          bg: "#0a192f",
+          card: "#112240",
+          text: "#ccd6f6",
+          muted: "#8892b0",
+        }
       },
       boxShadow: {
         soft: "0 18px 40px rgba(4, 47, 82, 0.16)",

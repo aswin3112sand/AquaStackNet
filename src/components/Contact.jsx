@@ -30,15 +30,15 @@ export default function Contact() {
   }
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-10 md:py-12">
+    <section className="max-w-6xl mx-auto px-4 py-10 md:py-12 text-anchor-navy dark:text-dark-text">
       <div className="text-center max-w-xl mx-auto mb-6">
-        <h2 className="text-2xl font-display font-semibold mb-1 text-anchor-navy">Contact &amp; Free Quote</h2>
-        <p className="text-sm text-anchor-navy/80">
+        <h2 className="text-2xl font-display font-semibold mb-1 text-anchor-navy dark:text-white">Contact &amp; Free Quote</h2>
+        <p className="text-sm text-anchor-navy/80 dark:text-dark-muted">
           Share your balcony photos &amp; size – we&apos;ll guide you with the best balcony safety net option and pricing.
         </p>
       </div>
       <div className="grid md:grid-cols-[0.85fr,1.15fr] gap-5 items-start">
-        <div className="card-magnetic bg-gradient-to-br from-[#0d67a5] via-[#1f8fd6] to-[#7cd7ff] text-white rounded-2xl border border-white/40 shadow-[0_16px_34px_rgba(6,60,110,0.22)] p-4 text-sm">
+        <div className="card-magnetic bg-gradient-to-br from-[#0d67a5] via-[#1f8fd6] to-[#7cd7ff] dark:from-[#0f315a] dark:via-[#0c203a] dark:to-[#0c1930] text-white rounded-2xl border border-white/40 dark:border-dark-muted shadow-[0_16px_34px_rgba(6,60,110,0.22)] p-4 text-sm">
           <h3 className="text-sm font-semibold mb-2 text-white">Reach Us</h3>
           <p className="mb-1">
             <strong>WhatsApp:</strong>{' '}
@@ -69,9 +69,9 @@ export default function Contact() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="card-magnetic bg-gradient-to-br from-[#fff0e7] via-white to-[#e6f6ff] rounded-2xl border border-white/60 shadow-[0_16px_34px_rgba(4,47,82,0.18)] p-4 text-sm"
+          className="card-magnetic bg-gradient-to-br from-[#fff0e7] via-white to-[#e6f6ff] dark:from-[#0f1f3a] dark:via-[#0b162d] dark:to-[#102340] rounded-2xl border border-white/60 dark:border-dark-muted shadow-[0_16px_34px_rgba(4,47,82,0.18)] p-4 text-sm"
         >
-          <h3 className="text-sm font-semibold mb-3 text-anchor-navy">Ask for a Free Quote</h3>
+          <h3 className="text-sm font-semibold mb-3 text-anchor-navy dark:text-white">Ask for a Free Quote</h3>
           <div className="mb-2">
             <label htmlFor="name" className="block text-xs mb-1">
               Name
@@ -81,7 +81,7 @@ export default function Contact() {
               name="name"
               type="text"
               required
-              className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+              className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
               placeholder="Your name"
             />
           </div>
@@ -94,7 +94,7 @@ export default function Contact() {
               name="phone"
               type="tel"
               required
-              className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+              className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
               placeholder="Your phone number"
             />
           </div>
@@ -105,7 +105,7 @@ export default function Contact() {
             <select
               id="type"
               name="type"
-              className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+              className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
             >
               <option>Balcony Safety Net</option>
               <option>Anti-Bird / Pigeon Net</option>
@@ -125,7 +125,7 @@ export default function Contact() {
                 type="number"
                 min="0"
                 step="0.1"
-                className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+                className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
                 placeholder="e.g. 10"
               />
             </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                 type="number"
                 min="0"
                 step="0.1"
-                className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+                className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
                 placeholder="e.g. 8"
               />
             </div>
@@ -152,17 +152,17 @@ export default function Contact() {
               id="message"
               name="message"
               rows={3}
-              className="input-field w-full rounded-lg border border-skybrand-light bg-white/90 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60"
+              className="input-field w-full rounded-lg border border-skybrand-light dark:border-dark-muted bg-white/90 dark:bg-dark-card/70 px-2.5 py-1.5 text-xs outline-none focus:border-accent-coral focus:ring-1 focus:ring-accent-coral/60 dark:text-dark-text dark:placeholder:text-dark-muted"
               placeholder="Balcony type, floor, grill details, etc."
             />
           </div>
           <button
             type="submit"
-            className="btn-cta interactive w-full mt-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full text-xs font-semibold text-white shadow-soft"
+            className="btn-cta interactive w-full mt-1 inline-flex items-center justify-center px-4 py-2.5 rounded-full text-xs font-semibold text-white shadow-soft tracking-[0.05em] uppercase"
           >
-            <span>Send Enquiry</span>
+            <span className="drop-shadow-[0_4px_14px_rgba(76,230,160,0.45)]">Send Enquiry</span>
           </button>
-          {status && <p className="mt-2 text-[11px] text-skybrand-deep">{status}</p>}
+          {status && <p className="mt-2 text-[11px] text-skybrand-deep dark:text-skybrand-light">{status}</p>}
         </form>
       </div>
     </section>
